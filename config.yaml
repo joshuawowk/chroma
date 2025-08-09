@@ -1,0 +1,1 @@
+echo "allow_reset: true" > config.yaml
