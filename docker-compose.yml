@@ -18,10 +18,10 @@ services:
       # The default config specifies a persist_directory of /data.
       # Read more about deployments: https://docs.trychroma.com/deployment
       - /docker/chromadb/chroma-data:/data
-    environment:
-      - CHROMA_OPEN_TELEMETRY__ENDPOINT=${CHROMA_OPEN_TELEMETRY__ENDPOINT}
-      - CHROMA_OPEN_TELEMETRY__SERVICE_NAME=${CHROMA_OPEN_TELEMETRY__SERVICE_NAME}
-      - OTEL_EXPORTER_OTLP_HEADERS=${OTEL_EXPORTER_OTLP_HEADERS}
+    # environment:
+    #   - CHROMA_OPEN_TELEMETRY__ENDPOINT=${CHROMA_OPEN_TELEMETRY__ENDPOINT}
+    #   - CHROMA_OPEN_TELEMETRY__SERVICE_NAME=${CHROMA_OPEN_TELEMETRY__SERVICE_NAME}
+    #   - OTEL_EXPORTER_OTLP_HEADERS=${OTEL_EXPORTER_OTLP_HEADERS}
     restart: unless-stopped # possible values are: "no", always", "on-failure", "unless-stopped"
     ports:
       - "8778:8000"
