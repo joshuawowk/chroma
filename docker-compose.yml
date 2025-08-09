@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 
 networks:
   net:
@@ -27,13 +27,9 @@ services:
       - "8778:8000"
     healthcheck:
       # Adjust below to match your container port
-      test: [ "CMD", "curl", "-f", "http://localhost:8778/api/v2/heartbeat" ]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v2/heartbeat"]
       interval: 30s
       timeout: 10s
       retries: 3
     networks:
       - net
-
-volumes:
-  chroma-data:
-    driver: local
